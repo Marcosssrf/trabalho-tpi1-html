@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estoque</title>
+  </head>
+  <body
+    style="
+      background-color: #faf3e0;
+      color: #352d2d;
+      font-family: Arial, sans-serif;
+    "
+  >
+    <header>
+      <img
+        src="Gemini_Generated_Image_bgf6w2bgf6w2bgf6-removebg-preview.png"
+        alt="Logo da Livraria InkSpace"
+        style="height: 150px"
+      />
+      <h1>Livraria InkSpace</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="faq.html">Perguntas Frequentes</a></li>
+          <li><a href="historia.html">Nossa História</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1><u>Estoque</u></h1>
+      <form action="http://localhost/estoque.php" method="post">
+        <label for="idLivro"><b>ID do Livro:</b></label>
+        <input type="text" id="idLivro" name="idLivro" required /><br /><br />
+        <label for="quantidade"><b>Quantidade em Estoque:</b></label>
+        <input
+          type="number"
+          id="quantidade"
+          name="quantidade"
+          required
+        /><br /><br />
+        <label for="localizacao"><b>Localização:</b></label>
+        <input
+          type="text"
+          id="localizacao"
+          name="localizacao"
+          required
+        /><br /><br />
+        <label for="dataAtualizacao"><b>Data de Atualização:</b></label>
+        <input
+          type="date"
+          id="dataAtualizacao"
+          name="dataAtualizacao"
+          required
+        />
+        <br /><br />
+        <label for="funcionario"><b>Funcionário Responsável:</b></label>
+        <input
+          type="text"
+          id="funcionario"
+          name="funcionario"
+          required
+        /><br /><br />
+        <button type="submit"><strong>Atualizar Estoque</strong></button>
+      </form>
+      <p>
+        <em>Consulte o estoque atual dos livros disponíveis na livraria.</em>
+      </p>
+      <pre>
+        <strong>Relatório de Estoque Recente:</strong>
+
+        ID do Livro:  001
+        Título:       O Alquimista
+        Autor:        Paulo Coelho
+        Quantidade:   15
+        Localização:  Prateleira A3
+
+        ID do Livro:  002
+        Título:       1984
+        Autor:        George Orwell
+        Quantidade:   8
+        Localização:  Prateleira B1
+
+        ID do Livro:  003
+        Título:       Dom Casmurro
+        Autor:        Machado de Assis
+        Quantidade:   12
+        Localização:  Prateleira C4
+
+        <em>(Dados atualizados em: 15/05/2024)</em>
+      </pre>
+      <table>
+        <thead>
+          <tr>
+            <th><strong>ID do Livro</strong></th>
+            <th><strong>Título</strong></th>
+            <th><strong>Autor</strong></th>
+            <th><strong>Quantidade em Estoque</strong></th>
+            <th><strong>Localização</strong></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><tt>001</tt></td>
+            <td>O Alquimista</td>
+            <td>Paulo Coelho</td>
+            <td>15</td>
+            <td>Prateleira A3</td>
+          </tr>
+          <tr>
+            <td><tt>002</tt></td>
+            <td>1984</td>
+            <td>George Orwell</td>
+            <td>8</td>
+            <td>Prateleira B1</td>
+          </tr>
+          <tr>
+            <td><tt>003</tt></td>
+            <td>Dom Casmurro</td>
+            <td>Machado de Assis</td>
+            <td>12</td>
+            <td>Prateleira C4</td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+    <footer>
+      <p><strong>&copy; 2025 Livraria InkSpace - Trabalho TPI1</strong></p>
+    </footer>
+  </body>
+</html>

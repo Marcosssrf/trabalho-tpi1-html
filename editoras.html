@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro Editoras</title>
+  </head>
+  <body
+    style="
+      background-color: #faf3e0;
+      color: #352d2d;
+      font-family: Arial, sans-serif;
+    "
+  >
+    <header>
+      <img
+        src="Gemini_Generated_Image_bgf6w2bgf6w2bgf6-removebg-preview.png"
+        alt="Logo da Livraria InkSpace"
+        style="height: 150px"
+      />
+      <h1>Livraria InkSpace</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="sobre.html">Sobre Nós</a></li>
+          <li><a href="faq.html">Perguntas Frequentes</a></li>
+          <li><a href="historia.html">Nossa História</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1><u>Cadastro de Editoras</u></h1>
+      <form action="http://localhost/editoras.php" method="post">
+        <label for="nome"><b>Nome da Editora:</b></label>
+        <input type="text" id="nome" name="nome" required /><br />
+        <br />
+        <label for="cnpj"><b>CNPJ:</b></label>
+        <input type="text" id="cnpj" name="cnpj" required /><br />
+        <br />
+        <label for="endereco"><b>Endereço:</b></label>
+        <input type="text" id="endereco" name="endereco" required /><br />
+        <br />
+        <label for="telefone"><b>Telefone:</b></label>
+        <input type="tel" id="telefone" name="telefone" required /><br />
+        <br />
+        <label for="email"><b>Email:</b></label>
+        <input type="email" id="email" name="email" required /><br />
+        <br />
+        <button type="submit"><strong>Cadastrar</strong></button><br /><br />
+      </form>
+    </main>
+    <footer>
+      <p><strong>&copy; 2025 Livraria InkSpace - Trabalho TPI1</strong></p>
+    </footer>
+  </body>
+</html>
