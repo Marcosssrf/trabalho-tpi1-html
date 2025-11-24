@@ -4,14 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vendas</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body
-    style="
-      background-color: #faf3e0;
-      color: #352d2d;
-      font-family: Arial, sans-serif;
-    "
-  >
+  <body>
     <header>
       <img
         src="Gemini_Generated_Image_bgf6w2bgf6w2bgf6-removebg-preview.png"
@@ -30,22 +25,58 @@
     </header>
     <main>
       <h1><u>Registro de Vendas</u></h1>
-      <form action="http://localhost/vendas.php" method="post">
+      <form
+        action="http://localhost/vendas.php"
+        method="post"
+        id="vendasForm"
+        onsubmit="return validateVendasForm(this);"
+      >
         <label for="idVenda"><b>ID da Venda:</b></label>
-        <input type="text" id="idVenda" name="idVenda" required /><br />
-        <br />
+        <input type="text" id="idVenda" name="idVenda" required /><br /><br />
+
         <label for="dataVenda"><b>Data da Venda:</b></label>
-        <input type="date" id="dataVenda" name="dataVenda" required /><br />
-        <br />
+        <input
+          type="date"
+          id="dataVenda"
+          name="dataVenda"
+          required
+        /><br /><br />
+
         <label for="cliente"><b>Cliente:</b></label>
-        <input type="text" id="cliente" name="cliente" required /><br />
-        <br />
-        <label for="livro"><b>Livro:</b></label>
-        <input type="text" id="livro" name="livro" required /><br />
-        <br />
-        <label for="quantidade"><b>Quantidade:</b></label>
-        <input type="number" id="quantidade" name="quantidade" required /><br />
-        <br />
+        <input type="text" id="cliente" name="cliente" required /><br /><br />
+
+        <h2>Itens da Venda</h2>
+        <div id="itensContainer">
+          <div class="itemVenda">
+            <label for="livro_1"><b>Livro:</b></label>
+            <input type="text" id="livro_1" name="livro[]" required /><br />
+            <label for="quantidade_1"><b>Quantidade:</b></label>
+            <input
+              type="number"
+              id="quantidade_1"
+              name="quantidade[]"
+              min="1"
+              value="1"
+              onchange="calculateTotal()"
+              required
+            /><br />
+            <label for="preco_1"><b>Preço Unitário:</b></label>
+            <input
+              type="number"
+              id="preco_1"
+              name="preco[]"
+              step="0.01"
+              min="0.01"
+              value="0.00"
+              onchange="calculateTotal()"
+              required
+            /><br /><br />
+          </div>
+        </div>
+
+        <button type="button" onclick="addItem()">
+          <strong>Adicionar Mais Item</strong></button
+        ><br /><br />
 
         <label for="total"><b>Total:</b></label>
         <input
@@ -53,9 +84,10 @@
           id="total"
           name="total"
           step="0.01"
+          value="0.00"
+          readonly
           required
-        /><br />
-        <br />
+        /><br /><br />
 
         <button type="submit"><strong>Registrar Venda</strong></button
         ><br /><br />
@@ -64,5 +96,6 @@
     <footer>
       <p><strong>&copy; 2025 Livraria InkSpace - Trabalho TPI1</strong></p>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>

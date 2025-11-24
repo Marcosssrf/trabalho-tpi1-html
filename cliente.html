@@ -4,14 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cadastro Cliente</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body
-    style="
-      background-color: #faf3e0;
-      color: #352d2d;
-      font-family: Arial, sans-serif;
-    "
-  >
+  <body>
     <header>
       <img
         src="Gemini_Generated_Image_bgf6w2bgf6w2bgf6-removebg-preview.png"
@@ -30,14 +25,19 @@
     </header>
     <main>
       <h1><u>Cadastro de clientes</u></h1>
-      <form action="http://localhost/inkspace/clientes.php" method="get">
+      <form
+        action="http://localhost/inkspace/clientes.php"
+        method="get"
+        id="clienteForm"
+        onsubmit="return validateClienteForm(this);"
+      >
         <label for="nome"><b>Nome:</b></label>
         <input type="text" id="nome" name="nome" required /><br /><br />
         <label for="email"><b>Email:</b></label>
         <input type="email" id="email" name="email" required /><br /><br />
         <label for="telefone"><b>Telefone:</b></label>
         <input type="tel" id="telefone" name="telefone" required /><br /><br />
-        <label for="cpf"><b>CPF:</b></label>
+        <label for="cpf"><b>CPF/CNPJ:</b></label>
         <input type="text" id="cpf" name="cpf" required /><br /><br />
         <label for="dataNascimento"><b>Data de Nascimento:</b></label>
         <input
@@ -47,11 +47,28 @@
           required
         /><br /><br />
 
-        <button type="submit"><strong>Cadastrar</strong></button><br /><br />
+        <label for="endereco"><b>Endereço:</b></label>
+        <input type="text" id="endereco" name="endereco" required /><br /><br />
+
+        <label for="estado"><b>Estado:</b></label>
+        <select
+          id="estado"
+          name="estado"
+          required
+          onchange="updateCidades()"
+        ></select
+        ><br /><br />
+
+        <label for="cidade"><b>Cidade:</b></label>
+        <select id="cidade" name="cidade" required disabled></select
+        ><br /><br />
+        <button type="submit"><strong>Cadastrar Cliente</strong></button
+        ><br /><br />
       </form>
     </main>
     <footer>
       <p><strong>&copy; 2025 Livraria InkSpace - Trabalho TPI1</strong></p>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
